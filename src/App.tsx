@@ -1,11 +1,12 @@
 import React from 'react';
 import {PokemonListItem} from "./PokemonListItem"
+import pokemonsData from "./fixtures/pokemons.json"
 
 const App: React.FC = () => (
   <ul>
-    <PokemonListItem name="Bulbasaur"></PokemonListItem>
-    <PokemonListItem name="Pikachu"></PokemonListItem>
-    <PokemonListItem name="Charmander"></PokemonListItem>
+    {pokemonsData.results.map((pokemon) => (
+       <PokemonListItem key={pokemon.name} name={pokemon.name}></PokemonListItem>
+    ))}
   </ul>
 )
 
